@@ -1,4 +1,4 @@
-# js-lesson8 / сlosures
+# js-lesson7 / сlosures
 
 1) Створити карту користувача(User Card):
 
