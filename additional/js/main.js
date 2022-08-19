@@ -35,6 +35,8 @@ const User = function ({
     if (!arguments.length || typeof arguments[0] !== 'object') return;
     if (!new.target) throw 'Constructor must be called with "new" operator';
 
+    // Обов'язково створюються лише id, name, username. Всі інші поля будуть створені,
+    // за умови, якщо вони задані у вхідних параметрах
     this.id = id;
     this.name = name;
     this.username = username;
@@ -132,7 +134,7 @@ const Tag = function (title, action, attrs) {
     for (const attr of attrs) {
         if (typeof attr !== 'object') continue;
         const {title, action} = attr;
-        if (!title) continue;
+        if (!title) continue; // Без назви атрибуту, нема сенсу додавати опис
         const attrObj = {titleOfAttr: title}
         if (action) attrObj.actionOfAttr = action;
         this.attrs.push(attrObj);
